@@ -1,8 +1,9 @@
 import json
 from pathlib import Path
 
-CAMINHO_JSON = Path("storage/metadata/documentos.json")
+from config import CAMINHO_METADATA
 
+CAMINHO_JSON = CAMINHO_METADATA
 
 def ler_documentos() -> list[dict]:
     """Lê os documentos armazenados no arquivo JSON."""

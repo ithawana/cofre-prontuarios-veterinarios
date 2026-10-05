@@ -1,0 +1,9 @@
+storage:
+  arquivos: "storage/files"
+  metadata: "storage/metadata/documentos.json"
+  backups: "storage/backups"
+  exports: "storage/exports"
+  logs: "storage/logs"
+
+backup:
+  nome_prefixo: "backup"

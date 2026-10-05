@@ -2,20 +2,22 @@ from pathlib import Path
 from datetime import datetime
 import zipfile
 
-
-DIRETORIO_BACKUPS = Path("storage/backups")
-DIRETORIO_ARQUIVOS = Path("storage/files")
-DIRETORIO_METADATA = Path("storage/metadata")
+from config import (
+    DIRETORIO_ARQUIVOS,
+    DIRETORIO_METADATA,
+    DIRETORIO_BACKUPS,
+    PREFIXO_BACKUP,
+)
 
 
 def criar_backup() -> Path:
-    """Cria um arquivo ZIP contendo os arquivos e metadados do cofre"""
+    """Cria um arquivo ZIP contendo os arquivos e metadados do cofre."""
 
     DIRETORIO_BACKUPS.mkdir(parents=True, exist_ok=True)
 
     data_hora = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-    nome_backup = f"backup_{data_hora}.zip"
+    nome_backup = f"{PREFIXO_BACKUP}_{data_hora}.zip"
 
     caminho_backup = DIRETORIO_BACKUPS / nome_backup
 

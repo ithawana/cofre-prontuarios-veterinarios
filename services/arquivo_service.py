@@ -2,7 +2,7 @@ from pathlib import Path
 import hashlib
 import mimetypes
 
-DIRETORIO_ARQUIVOS = Path("storage/files")
+from config import DIRETORIO_ARQUIVOS
 
 
 def salvar_arquivo(arquivo, nome_armazenado: str) -> Path:
