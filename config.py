@@ -12,6 +12,7 @@ with open(CAMINHO_CONFIG, "r", encoding="utf-8") as arquivo:
 
 DIRETORIO_ARQUIVOS = Path(CONFIG["storage"]["arquivos"])
 DIRETORIO_METADATA = Path(CONFIG["storage"]["metadata"])
+CAMINHO_METADATA_JSON = DIRETORIO_METADATA / CONFIG["persistencia"]["arquivo_metadata"]
 DIRETORIO_BACKUPS = Path(CONFIG["storage"]["backups"])
 DIRETORIO_EXPORTS = Path(CONFIG["storage"]["exports"])
 DIRETORIO_LOGS = Path(CONFIG["storage"]["logs"])

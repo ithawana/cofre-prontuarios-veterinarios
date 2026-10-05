@@ -1,9 +1,12 @@
 storage:
   arquivos: "storage/files"
-  metadata: "storage/metadata/documentos.json"
+  metadata: "storage/metadata"
   backups: "storage/backups"
   exports: "storage/exports"
   logs: "storage/logs"
+
+persistencia:
+  arquivo_metadata: "documentos.json"
 
 backup:
   nome_prefixo: "backup"
