@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from datetime import datetime, date
 from enum import Enum
 
@@ -25,6 +25,14 @@ class DocumentoCreate(BaseModel):
     tutor: str
     especie: Especie
     data_atendimento: date
+
+class DocumentoUpdate(BaseModel):
+    categoria: Categoria | None = None
+    descricao: str | None = None
+    animal: str | None = None
+    tutor: str | None = None
+    especie: Especie | None = None
+    data_atendimento: date | None = None
 
 # documento completo, já salvo no sistema    
 class Documento(BaseModel):
