@@ -1,18 +1,25 @@
 import json
 from pathlib import Path
 
-from config import CAMINHO_METADATA_JSON
+from config import ARQUIVO_METADATA
+from logging_config import logger
 
-CAMINHO_JSON = CAMINHO_METADATA_JSON
+CAMINHO_JSON = ARQUIVO_METADATA
+
 
 def ler_documentos() -> list[dict]:
     """Lê os documentos armazenados no arquivo JSON."""
 
     if not CAMINHO_JSON.exists():
+        logger.warning("Arquivo de metadados não encontrado: %s", CAMINHO_JSON)
         return []
 
     with open(CAMINHO_JSON, "r", encoding="utf-8") as f:
-        return json.load(f)
+        documentos = json.load(f)
+
+    logger.info("Metadados dos documentos carregados.")
+
+    return documentos
 
 
 def salvar_documentos(documentos: list[dict]) -> None:
@@ -29,6 +36,11 @@ def salvar_documentos(documentos: list[dict]) -> None:
             default=str
         )
 
+    logger.info(
+        "Metadados dos documentos salvos. Total de registros: %d",
+        len(documentos)
+    )
+
 
 def buscar_por_id(documento_id: int) -> dict | None:
     """Busca um documento pelo seu ID."""
@@ -37,7 +49,10 @@ def buscar_por_id(documento_id: int) -> dict | None:
 
     for documento in documentos:
         if documento["id"] == documento_id:
+            logger.info("Documento encontrado: ID %d", documento_id)
             return documento
+
+    logger.warning("Documento não encontrado: ID %d", documento_id)
 
     return None
 
@@ -50,6 +65,8 @@ def adicionar(documento: dict) -> None:
     documentos.append(documento)
 
     salvar_documentos(documentos)
+
+    logger.info("Documento adicionado: ID %d", documento["id"])
 
 
 def atualizar(documento_id: int, novo_documento: dict) -> bool:
@@ -67,7 +84,14 @@ def atualizar(documento_id: int, novo_documento: dict) -> bool:
 
             salvar_documentos(documentos)
 
+            logger.info("Documento atualizado: ID %d", documento_id)
+
             return True
+
+    logger.warning(
+        "Não foi possível atualizar. Documento não encontrado: ID %d",
+        documento_id
+    )
 
     return False
 
@@ -84,8 +108,14 @@ def remover(documento_id: int) -> bool:
     ]
 
     if len(nova_lista) == len(documentos):
+        logger.warning(
+            "Não foi possível remover. Documento não encontrado: ID %d",
+            documento_id
+        )
         return False
 
     salvar_documentos(nova_lista)
+
+    logger.info("Documento removido: ID %d", documento_id)
 
     return True

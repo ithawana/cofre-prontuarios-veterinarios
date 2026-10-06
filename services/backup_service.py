@@ -8,6 +8,7 @@ from config import (
     DIRETORIO_BACKUPS,
     PREFIXO_BACKUP,
 )
+from logging_config import logger
 
 
 def criar_backup() -> Path:
@@ -42,5 +43,7 @@ def criar_backup() -> Path:
                         arquivo,
                         arquivo.relative_to(DIRETORIO_METADATA.parent)
                     )
+
+    logger.info("Backup criado: %s", nome_backup)
 
     return caminho_backup
