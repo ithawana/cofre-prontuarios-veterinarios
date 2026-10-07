@@ -10,3 +10,7 @@ persistencia:
 
 backup:
   nome_prefixo: "backup"
+
+logging:
+  nivel: "INFO"
+  arquivo: "sistema.log"
