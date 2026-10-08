@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, File, UploadFile, Form, Response
 
-from datetime import datetime
+from datetime import datetime, date
 
 from models.documento import Documento, DocumentoCreate, DocumentoUpdate
 from services import documento_service, arquivo_service
@@ -20,7 +20,7 @@ def upload_documento(
     animal: str = Form(...),
     tutor: str = Form(...),
     especie: str = Form(...),
-    data_atendimento: datetime = Form(...),
+    data_atendimento: date = Form(...),
     arquivo: UploadFile = File(...)
 ):
     try:
@@ -55,7 +55,7 @@ def upload_documento(
         documento = Documento(
             id=novo_id,
             nome_original=arquivo.filename,
-            nome_arquivo=nome_arquivo,
+            nome_armazenado=nome_arquivo,
             extensao=extensao,
             tipo_mime=tipo_mime,
             tamanho=caminho_arquivo.stat().st_size,

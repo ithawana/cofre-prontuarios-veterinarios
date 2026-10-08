@@ -1,0 +1,17 @@
+.venv/
+venv/
+
+__pycache__/
+*.pyc
+
+storage/files/*
+!storage/files/.gitkeep
+
+storage/metadata/*.json
+storage/logs/*.log
+
+storage/backups/*
+!storage/backups/.gitkeep
+
+storage/exports/*
+!storage/exports/.gitkeep

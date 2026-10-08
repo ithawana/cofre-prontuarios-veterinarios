@@ -1,2 +1,40 @@
 2026-10-06 14:00:21 INFO Teste do sistema de logging
 2026-10-06 15:48:02 WARNING Arquivo de metadados não encontrado: storage\metadata\documentos.json
+2026-10-08 01:16:44 WARNING Arquivo de metadados não encontrado: storage\metadata\documentos.json
+2026-10-08 01:23:21 WARNING Arquivo de metadados não encontrado: storage\metadata\documentos.json
+2026-10-08 01:23:21 WARNING Documento não encontrado: ID 999
+2026-10-08 01:34:21 WARNING Arquivo de metadados não encontrado: storage\metadata\documentos.json
+2026-10-08 01:34:21 INFO Arquivo salvo: 1.txt
+2026-10-08 01:34:21 INFO SHA-256 calculado para o arquivo: 1.txt
+2026-10-08 01:40:57 WARNING Arquivo de metadados não encontrado: storage\metadata\documentos.json
+2026-10-08 01:40:57 INFO Arquivo salvo: 1.txt
+2026-10-08 01:40:57 INFO SHA-256 calculado para o arquivo: 1.txt
+2026-10-08 01:40:57 WARNING Arquivo de metadados não encontrado: storage\metadata\documentos.json
+2026-10-08 01:40:57 INFO Metadados dos documentos salvos. Total de registros: 1
+2026-10-08 01:40:57 INFO Documento adicionado: ID 1
+2026-10-08 01:41:54 INFO Metadados dos documentos carregados.
+2026-10-08 01:41:54 INFO Arquivo salvo: 2.txt
+2026-10-08 01:41:54 INFO SHA-256 calculado para o arquivo: 2.txt
+2026-10-08 01:41:54 INFO Metadados dos documentos carregados.
+2026-10-08 01:41:54 INFO Metadados dos documentos salvos. Total de registros: 2
+2026-10-08 01:41:54 INFO Documento adicionado: ID 2
+2026-10-08 01:56:54 INFO Metadados dos documentos carregados.
+2026-10-08 02:01:46 INFO Metadados dos documentos carregados.
+2026-10-08 02:01:46 INFO Documento encontrado: ID 2
+2026-10-08 02:01:55 INFO Metadados dos documentos carregados.
+2026-10-08 02:01:55 INFO Documento encontrado: ID 1
+2026-10-08 02:02:21 INFO Metadados dos documentos carregados.
+2026-10-08 02:02:21 INFO Documento encontrado: ID 2
+2026-10-08 02:06:22 INFO Metadados dos documentos carregados.
+2026-10-08 02:06:22 INFO Documento encontrado: ID 2
+2026-10-08 02:06:22 INFO Metadados dos documentos carregados.
+2026-10-08 02:06:22 INFO Metadados dos documentos salvos. Total de registros: 2
+2026-10-08 02:06:22 INFO Documento atualizado: ID 2
+2026-10-08 02:06:47 INFO Metadados dos documentos carregados.
+2026-10-08 02:06:47 INFO Documento encontrado: ID 2
+2026-10-08 02:07:17 INFO Metadados dos documentos carregados.
+2026-10-08 02:07:17 INFO Documento encontrado: ID 1
+2026-10-08 02:07:17 INFO Arquivo excluído: 1.txt
+2026-10-08 02:07:17 INFO Metadados dos documentos carregados.
+2026-10-08 02:07:17 INFO Metadados dos documentos salvos. Total de registros: 1
+2026-10-08 02:07:17 INFO Documento removido: ID 1
