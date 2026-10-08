@@ -121,3 +121,238 @@
 2026-10-08 03:18:34 INFO Documento encontrado: ID 4
 2026-10-08 03:18:34 INFO SHA-256 calculado para o arquivo: 4.txt
 2026-10-08 03:18:34 INFO INTEGRIDADE_OK id=4
+2026-10-08 18:03:17 WARNING Arquivo de metadados não encontrado: storage\metadata\documentos.json
+2026-10-08 18:04:39 WARNING Arquivo de metadados não encontrado: storage\metadata\documentos.json
+2026-10-08 18:06:23 WARNING Arquivo de metadados não encontrado: storage\metadata\documentos.json
+2026-10-08 18:06:23 INFO Arquivo salvo: 1.txt
+2026-10-08 18:06:23 INFO SHA-256 calculado para o arquivo: 1.txt
+2026-10-08 18:06:23 WARNING Arquivo de metadados não encontrado: storage\metadata\documentos.json
+2026-10-08 18:06:23 INFO Metadados dos documentos salvos. Total de registros: 1
+2026-10-08 18:06:23 INFO Documento adicionado: ID 1
+2026-10-08 18:07:33 INFO Metadados dos documentos carregados.
+2026-10-08 18:07:33 INFO Arquivo salvo: 2.txt
+2026-10-08 18:07:33 INFO SHA-256 calculado para o arquivo: 2.txt
+2026-10-08 18:07:33 INFO Metadados dos documentos carregados.
+2026-10-08 18:07:33 INFO Metadados dos documentos salvos. Total de registros: 2
+2026-10-08 18:07:33 INFO Documento adicionado: ID 2
+2026-10-08 18:09:09 INFO Metadados dos documentos carregados.
+2026-10-08 18:10:07 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Arquivo salvo: 3.txt
+2026-10-08 18:12:12 INFO SHA-256 calculado para o arquivo: 3.txt
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Metadados dos documentos salvos. Total de registros: 3
+2026-10-08 18:12:12 INFO Documento adicionado: ID 3
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Arquivo salvo: 4.txt
+2026-10-08 18:12:12 INFO SHA-256 calculado para o arquivo: 4.txt
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Metadados dos documentos salvos. Total de registros: 4
+2026-10-08 18:12:12 INFO Documento adicionado: ID 4
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Arquivo salvo: 5.txt
+2026-10-08 18:12:12 INFO SHA-256 calculado para o arquivo: 5.txt
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Metadados dos documentos salvos. Total de registros: 5
+2026-10-08 18:12:12 INFO Documento adicionado: ID 5
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Arquivo salvo: 6.txt
+2026-10-08 18:12:12 INFO SHA-256 calculado para o arquivo: 6.txt
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Metadados dos documentos salvos. Total de registros: 6
+2026-10-08 18:12:12 INFO Documento adicionado: ID 6
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Arquivo salvo: 7.csv
+2026-10-08 18:12:12 INFO SHA-256 calculado para o arquivo: 7.csv
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Metadados dos documentos salvos. Total de registros: 7
+2026-10-08 18:12:12 INFO Documento adicionado: ID 7
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Arquivo salvo: 8.csv
+2026-10-08 18:12:12 INFO SHA-256 calculado para o arquivo: 8.csv
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Metadados dos documentos salvos. Total de registros: 8
+2026-10-08 18:12:12 INFO Documento adicionado: ID 8
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Arquivo salvo: 9.csv
+2026-10-08 18:12:12 INFO SHA-256 calculado para o arquivo: 9.csv
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Metadados dos documentos salvos. Total de registros: 9
+2026-10-08 18:12:12 INFO Documento adicionado: ID 9
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Arquivo salvo: 10.pdf
+2026-10-08 18:12:12 INFO SHA-256 calculado para o arquivo: 10.pdf
+2026-10-08 18:12:12 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:12 INFO Metadados dos documentos salvos. Total de registros: 10
+2026-10-08 18:12:12 INFO Documento adicionado: ID 10
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Arquivo salvo: 11.pdf
+2026-10-08 18:12:13 INFO SHA-256 calculado para o arquivo: 11.pdf
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Metadados dos documentos salvos. Total de registros: 11
+2026-10-08 18:12:13 INFO Documento adicionado: ID 11
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Arquivo salvo: 12.pdf
+2026-10-08 18:12:13 INFO SHA-256 calculado para o arquivo: 12.pdf
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Metadados dos documentos salvos. Total de registros: 12
+2026-10-08 18:12:13 INFO Documento adicionado: ID 12
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Arquivo salvo: 13.png
+2026-10-08 18:12:13 INFO SHA-256 calculado para o arquivo: 13.png
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Metadados dos documentos salvos. Total de registros: 13
+2026-10-08 18:12:13 INFO Documento adicionado: ID 13
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Arquivo salvo: 14.png
+2026-10-08 18:12:13 INFO SHA-256 calculado para o arquivo: 14.png
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Metadados dos documentos salvos. Total de registros: 14
+2026-10-08 18:12:13 INFO Documento adicionado: ID 14
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Arquivo salvo: 15.png
+2026-10-08 18:12:13 INFO SHA-256 calculado para o arquivo: 15.png
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Metadados dos documentos salvos. Total de registros: 15
+2026-10-08 18:12:13 INFO Documento adicionado: ID 15
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Arquivo salvo: 16.json
+2026-10-08 18:12:13 INFO SHA-256 calculado para o arquivo: 16.json
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Metadados dos documentos salvos. Total de registros: 16
+2026-10-08 18:12:13 INFO Documento adicionado: ID 16
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Arquivo salvo: 17.json
+2026-10-08 18:12:13 INFO SHA-256 calculado para o arquivo: 17.json
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:13 INFO Metadados dos documentos salvos. Total de registros: 17
+2026-10-08 18:12:13 INFO Documento adicionado: ID 17
+2026-10-08 18:12:13 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:28 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:28 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:28 INFO Documento encontrado: ID 3
+2026-10-08 18:12:28 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:28 INFO Documento encontrado: ID 4
+2026-10-08 18:12:28 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:28 INFO Documento encontrado: ID 5
+2026-10-08 18:12:28 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:28 INFO Documento encontrado: ID 6
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 7
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 8
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 9
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 10
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 11
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 12
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 13
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 14
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 15
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 16
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 17
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 3
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 4
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 5
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 6
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 7
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 8
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 9
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 10
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 11
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 12
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 13
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 14
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 15
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 16
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 17
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 3
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 3.txt
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=3
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 4
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 4.txt
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=4
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 5
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 5.txt
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=5
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 6
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 6.txt
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=6
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 7
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 7.csv
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=7
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 8
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 8.csv
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=8
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 9
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 9.csv
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=9
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 10
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 10.pdf
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=10
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 11
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 11.pdf
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=11
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 12
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 12.pdf
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=12
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 13
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 13.png
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=13
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 14
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 14.png
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=14
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 15
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 15.png
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=15
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 16
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 16.json
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=16
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Documento encontrado: ID 17
+2026-10-08 18:12:29 INFO SHA-256 calculado para o arquivo: 17.json
+2026-10-08 18:12:29 INFO INTEGRIDADE_OK id=17
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
+2026-10-08 18:12:29 WARNING Documento não encontrado: ID 1017

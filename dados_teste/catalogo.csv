@@ -1,0 +1,16 @@
+﻿arquivo,categoria,descricao,animal,tutor,especie,data_atendimento
+01_prontuario_rex.txt,prontuario,Registro clinico de rotina (ficticio),Rex,Tutor Ficticio A,cachorro,2026-09-01
+02_prontuario_mimi.txt,prontuario,Acompanhamento preventivo (ficticio),Mimi,Tutor Ficticio B,gato,2026-09-02
+03_prontuario_kiwi.txt,prontuario,Anotacoes de atendimento (ficticio),Kiwi,Tutor Ficticio C,ave,2026-09-03
+04_orientacoes_mel.txt,receita,Orientacoes gerais simuladas,Mel,Tutor Ficticio D,cachorro,2026-09-04
+05_hemograma_luna.csv,exame,Resultados laboratoriais simulados,Luna,Tutor Ficticio E,gato,2026-09-05
+06_bioquimico_thor.csv,exame,Registro de bioquimica ficticio,Thor,Tutor Ficticio F,cachorro,2026-09-06
+07_parasitologico_nina.csv,exame,Resultado ficticio de exame,Nina,Tutor Ficticio G,gato,2026-09-07
+08_receita_bob.pdf,receita,"Receita ilustrativa, sem validade clinica",Bob,Tutor Ficticio H,cachorro,2026-09-08
+09_receita_amora.pdf,receita,"Receita ilustrativa, sem validade clinica",Amora,Tutor Ficticio I,gato,2026-09-09
+10_laudo_kiwi.pdf,exame,Laudo demonstrativo de ave,Kiwi,Tutor Ficticio C,ave,2026-09-10
+11_imagem_rex.png,imagem,"Imagem ilustrativa, nao diagnostica",Rex,Tutor Ficticio A,cachorro,2026-09-11
+12_imagem_pipoca.png,imagem,"Imagem ilustrativa, nao diagnostica",Pipoca,Tutor Ficticio J,outro,2026-09-12
+13_imagem_jade.png,imagem,"Imagem ilustrativa, nao diagnostica",Jade,Tutor Ficticio K,gato,2026-09-13
+14_ficha_bento.json,prontuario,Ficha de atendimento ficticia,Bento,Tutor Ficticio L,cachorro,2026-09-14
+15_exame_chico.json,exame,Dados de exame ficticios,Chico,Tutor Ficticio M,outro,2026-09-15

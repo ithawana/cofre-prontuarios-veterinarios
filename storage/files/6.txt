@@ -1,0 +1,9 @@
+DOCUMENTO FICTICIO - APENAS PARA TESTES
+Documento: 04_orientacoes_mel.txt
+Categoria: receita
+Animal: Mel
+Especie: cachorro
+Tutor: Tutor Ficticio D
+Atendimento: 2026-09-04
+Descricao: Orientacoes gerais simuladas
+Observacoes: registro de demonstracao, sem dados reais e sem validade clinica.

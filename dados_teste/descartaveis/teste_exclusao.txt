@@ -1,0 +1,4 @@
+DOCUMENTO FICTICIO DESCARTAVEL
+Teste da F6: cadastrar este arquivo, anotar seu ID, excluir via
+DELETE /documentos/{id}; verificar ausencia do registro e do arquivo fisico.
+Nao faz parte dos 15 documentos obrigatorios.

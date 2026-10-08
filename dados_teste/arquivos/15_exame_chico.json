@@ -1,0 +1,13 @@
+{
+  "aviso": "DOCUMENTO FICTICIO PARA TESTES - SEM VALIDADE CLINICA",
+  "animal": "Chico",
+  "tutor": "Tutor Ficticio M",
+  "especie": "outro",
+  "data_atendimento": "2026-09-15",
+  "categoria": "exame",
+  "descricao": "Dados de exame ficticios",
+  "observacoes": [
+    "registro simulado",
+    "nao utilizar para diagnostico"
+  ]
+}

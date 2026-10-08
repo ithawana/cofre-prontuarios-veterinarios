@@ -1,0 +1,4 @@
+DOCUMENTO FICTICIO DESCARTAVEL
+Teste da F5: cadastrar este arquivo, alterar somente os metadados
+(categoria ou descricao) via PUT /documentos/{id}, e consultar de novo.
+Nao faz parte dos 15 documentos obrigatorios.

@@ -1,0 +1,9 @@
+DOCUMENTO FICTICIO - APENAS PARA TESTES
+Documento: 01_prontuario_rex.txt
+Categoria: prontuario
+Animal: Rex
+Especie: cachorro
+Tutor: Tutor Ficticio A
+Atendimento: 2026-09-01
+Descricao: Registro clinico de rotina (ficticio)
+Observacoes: registro de demonstracao, sem dados reais e sem validade clinica.

@@ -1,0 +1,9 @@
+DOCUMENTO FICTICIO - APENAS PARA TESTES
+Documento: 03_prontuario_kiwi.txt
+Categoria: prontuario
+Animal: Kiwi
+Especie: ave
+Tutor: Tutor Ficticio C
+Atendimento: 2026-09-03
+Descricao: Anotacoes de atendimento (ficticio)
+Observacoes: registro de demonstracao, sem dados reais e sem validade clinica.

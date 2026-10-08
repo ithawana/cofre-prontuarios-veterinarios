@@ -1,0 +1,152 @@
+[
+  {
+    "arquivo": "01_prontuario_rex.txt",
+    "categoria": "prontuario",
+    "descricao": "Registro clinico de rotina (ficticio)",
+    "animal": "Rex",
+    "tutor": "Tutor Ficticio A",
+    "especie": "cachorro",
+    "data_atendimento": "2026-09-01",
+    "sha256_esperado": "43d3123444f7e0fd3279e66697f379aa0ae1cc1e693661b400ff8d8078953a40"
+  },
+  {
+    "arquivo": "02_prontuario_mimi.txt",
+    "categoria": "prontuario",
+    "descricao": "Acompanhamento preventivo (ficticio)",
+    "animal": "Mimi",
+    "tutor": "Tutor Ficticio B",
+    "especie": "gato",
+    "data_atendimento": "2026-09-02",
+    "sha256_esperado": "58529ac95290a8d25f70092ac9f5313431c63f5ffce112620afe553eadb6f7cc"
+  },
+  {
+    "arquivo": "03_prontuario_kiwi.txt",
+    "categoria": "prontuario",
+    "descricao": "Anotacoes de atendimento (ficticio)",
+    "animal": "Kiwi",
+    "tutor": "Tutor Ficticio C",
+    "especie": "ave",
+    "data_atendimento": "2026-09-03",
+    "sha256_esperado": "9dd4c26b2b5f5dd945bb422ce2012aa0b9a0fc8662d5ef5b530fc28e71832ad5"
+  },
+  {
+    "arquivo": "04_orientacoes_mel.txt",
+    "categoria": "receita",
+    "descricao": "Orientacoes gerais simuladas",
+    "animal": "Mel",
+    "tutor": "Tutor Ficticio D",
+    "especie": "cachorro",
+    "data_atendimento": "2026-09-04",
+    "sha256_esperado": "28b9219440b69ca0834c4f3401b7f14cbd98fccd97822aa4324440b39286fe11"
+  },
+  {
+    "arquivo": "05_hemograma_luna.csv",
+    "categoria": "exame",
+    "descricao": "Resultados laboratoriais simulados",
+    "animal": "Luna",
+    "tutor": "Tutor Ficticio E",
+    "especie": "gato",
+    "data_atendimento": "2026-09-05",
+    "sha256_esperado": "9ddb3aea019cbe27d6b820f1a072d2b955156d581405cad312235e0c3d980d53"
+  },
+  {
+    "arquivo": "06_bioquimico_thor.csv",
+    "categoria": "exame",
+    "descricao": "Registro de bioquimica ficticio",
+    "animal": "Thor",
+    "tutor": "Tutor Ficticio F",
+    "especie": "cachorro",
+    "data_atendimento": "2026-09-06",
+    "sha256_esperado": "1bd69d0d71c371cface6bc1c5d073568bc174716e3dc96507e6b5b7a5eadb00b"
+  },
+  {
+    "arquivo": "07_parasitologico_nina.csv",
+    "categoria": "exame",
+    "descricao": "Resultado ficticio de exame",
+    "animal": "Nina",
+    "tutor": "Tutor Ficticio G",
+    "especie": "gato",
+    "data_atendimento": "2026-09-07",
+    "sha256_esperado": "d53096375e37211b5847876a91facd969867727f48678f9e8e6ee9b0ee9ff26f"
+  },
+  {
+    "arquivo": "08_receita_bob.pdf",
+    "categoria": "receita",
+    "descricao": "Receita ilustrativa, sem validade clinica",
+    "animal": "Bob",
+    "tutor": "Tutor Ficticio H",
+    "especie": "cachorro",
+    "data_atendimento": "2026-09-08",
+    "sha256_esperado": "257140e246ea046149b55b3bc721295acf256ff36d4a009f307537dae7b554cc"
+  },
+  {
+    "arquivo": "09_receita_amora.pdf",
+    "categoria": "receita",
+    "descricao": "Receita ilustrativa, sem validade clinica",
+    "animal": "Amora",
+    "tutor": "Tutor Ficticio I",
+    "especie": "gato",
+    "data_atendimento": "2026-09-09",
+    "sha256_esperado": "460c21ed4c133ceb13fec77953bd201bf55dfde231438604888f323ce257d0ad"
+  },
+  {
+    "arquivo": "10_laudo_kiwi.pdf",
+    "categoria": "exame",
+    "descricao": "Laudo demonstrativo de ave",
+    "animal": "Kiwi",
+    "tutor": "Tutor Ficticio C",
+    "especie": "ave",
+    "data_atendimento": "2026-09-10",
+    "sha256_esperado": "2c7d2ae09ccbc61b23780c6490092fdd33e5802d9f50bcffca87d595900caa5c"
+  },
+  {
+    "arquivo": "11_imagem_rex.png",
+    "categoria": "imagem",
+    "descricao": "Imagem ilustrativa, nao diagnostica",
+    "animal": "Rex",
+    "tutor": "Tutor Ficticio A",
+    "especie": "cachorro",
+    "data_atendimento": "2026-09-11",
+    "sha256_esperado": "4f60be068f81c12dcc2b693541b342fbfd2381e4aa90225019eebde6cc49aee0"
+  },
+  {
+    "arquivo": "12_imagem_pipoca.png",
+    "categoria": "imagem",
+    "descricao": "Imagem ilustrativa, nao diagnostica",
+    "animal": "Pipoca",
+    "tutor": "Tutor Ficticio J",
+    "especie": "outro",
+    "data_atendimento": "2026-09-12",
+    "sha256_esperado": "5a05c465574a8d317ae0a3bc1727ec3bbc8ef08218cc514a4b20b0007bebd2e0"
+  },
+  {
+    "arquivo": "13_imagem_jade.png",
+    "categoria": "imagem",
+    "descricao": "Imagem ilustrativa, nao diagnostica",
+    "animal": "Jade",
+    "tutor": "Tutor Ficticio K",
+    "especie": "gato",
+    "data_atendimento": "2026-09-13",
+    "sha256_esperado": "86120cfd2e074e22685a89df32903d2a7b2a222d016cd460e2c648eefba6a5b5"
+  },
+  {
+    "arquivo": "14_ficha_bento.json",
+    "categoria": "prontuario",
+    "descricao": "Ficha de atendimento ficticia",
+    "animal": "Bento",
+    "tutor": "Tutor Ficticio L",
+    "especie": "cachorro",
+    "data_atendimento": "2026-09-14",
+    "sha256_esperado": "783733316fcc80eb60d4c4347d16fa066b7f7c727c65d09ecc49681a481f7ec8"
+  },
+  {
+    "arquivo": "15_exame_chico.json",
+    "categoria": "exame",
+    "descricao": "Dados de exame ficticios",
+    "animal": "Chico",
+    "tutor": "Tutor Ficticio M",
+    "especie": "outro",
+    "data_atendimento": "2026-09-15",
+    "sha256_esperado": "affd48717961bf8214eda5bc0fd26aed35a9ee1e77d7e3cbd85b81c845d113b2"
+  }
+]

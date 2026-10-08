@@ -1,0 +1,9 @@
+DOCUMENTO FICTICIO - APENAS PARA TESTES
+Documento: 02_prontuario_mimi.txt
+Categoria: prontuario
+Animal: Mimi
+Especie: gato
+Tutor: Tutor Ficticio B
+Atendimento: 2026-09-02
+Descricao: Acompanhamento preventivo (ficticio)
+Observacoes: registro de demonstracao, sem dados reais e sem validade clinica.
