@@ -1,17 +1,18 @@
+# Ambiente virtual
 .venv/
 venv/
 
+# Cache do Python
 __pycache__/
 *.pyc
 
-storage/files/*
-!storage/files/.gitkeep
-
-storage/metadata/*.json
+# Logs
 storage/logs/*.log
 
+# Backups
 storage/backups/*
 !storage/backups/.gitkeep
 
+# Exportacoes
 storage/exports/*
 !storage/exports/.gitkeep
