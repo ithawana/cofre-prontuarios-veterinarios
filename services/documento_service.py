@@ -14,27 +14,36 @@ def ler_documentos() -> list[dict]:
         logger.warning("Arquivo de metadados não encontrado: %s", CAMINHO_JSON)
         return []
 
-    with open(CAMINHO_JSON, "r", encoding="utf-8") as f:
-        documentos = json.load(f)
+    try:
+        with open(CAMINHO_JSON, "r", encoding="utf-8") as f:
+            documentos = json.load(f)
+
+    except (OSError, json.JSONDecodeError):
+        logger.exception("ERRO_LEITURA_JSON")
+        raise
 
     logger.info("Metadados dos documentos carregados.")
 
     return documentos
-
 
 def salvar_documentos(documentos: list[dict]) -> None:
     """Salva os documentos no arquivo JSON."""
 
     CAMINHO_JSON.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(CAMINHO_JSON, "w", encoding="utf-8") as f:
-        json.dump(
-            documentos,
-            f,
-            indent=4,
-            ensure_ascii=False,
-            default=str
-        )
+    try:
+        with open(CAMINHO_JSON, "w", encoding="utf-8") as f:
+            json.dump(
+                documentos,
+                f,
+                indent=4,
+                ensure_ascii=False,
+                default=str
+            )
+
+    except (OSError, TypeError, ValueError):
+        logger.exception("ERRO_ESCRITA_JSON")
+        raise
 
     logger.info(
         "Metadados dos documentos salvos. Total de registros: %d",

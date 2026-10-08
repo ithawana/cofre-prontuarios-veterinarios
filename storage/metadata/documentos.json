@@ -270,5 +270,21 @@
         "tutor": "Tutor Ficticio M",
         "especie": "outro",
         "data_atendimento": "2026-09-15"
+    },
+    {
+        "id": 18,
+        "nome_original": "exame_lolla.txt",
+        "nome_armazenado": "18.txt",
+        "extensao": ".txt",
+        "tipo_mime": "text/plain",
+        "tamanho": 0,
+        "categoria": "exame",
+        "descricao": "Teste de Exame no Log",
+        "data_upload": "2026-10-08T19:23:05.028425",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "animal": "Lolla",
+        "tutor": "Tutor da Lolla",
+        "especie": "cachorro",
+        "data_atendimento": "2026-10-08"
     }
 ]

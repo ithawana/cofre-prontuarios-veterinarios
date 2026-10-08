@@ -5,6 +5,8 @@ from datetime import datetime, date
 from models.documento import Documento, DocumentoCreate, DocumentoUpdate
 from services import documento_service, arquivo_service
 
+from logging_config import logger
+
 
 router = APIRouter(
     prefix="/documentos",
@@ -75,9 +77,16 @@ def upload_documento(
             documento.model_dump(mode="json") # transforma em dict
         )
 
+        logger.info(
+            "UPLOAD id=%d arquivo=%s",
+            novo_id,
+            arquivo.filename
+        )
+
         return documento
 
     except Exception as erro:
+        logger.exception("ERRO_UPLOAD arquivo=%s", arquivo.filename)
         raise HTTPException(
             status_code=500,
             detail=f"Erro ao fazer upload do documento: {erro}"
@@ -109,6 +118,11 @@ def listar_documentos(
             documento for documento in documentos
             if documento["especie"].lower() == especie.lower()
         ]
+
+    logger.info(
+        "CONSULTA_LISTAGEM total=%d",
+        len(documentos)
+    )
 
     return documentos
 
@@ -143,6 +157,12 @@ def baixar_documento(documento_id: int):
 
     with open(caminho, "rb") as arquivo:
         conteudo = arquivo.read()
+
+    logger.info(
+        "DOWNLOAD id=%d arquivo=%s",
+        documento_id,
+        documento["nome_original"]
+    )
 
     return Response( # devolve o conteúdo do arquivo pela API
         content=conteudo,

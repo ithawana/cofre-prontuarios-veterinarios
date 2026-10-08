@@ -6,6 +6,8 @@ from routes.relatorios import router as relatorios_router
 
 from routes.integridade import router as integridade_router
 
+from logging_config import logger
+
 
 app = FastAPI(
     title="Cofre Digital de Prontuários Veterinários",
@@ -16,3 +18,4 @@ app = FastAPI(
 app.include_router(relatorios_router)
 app.include_router(documentos_router)
 app.include_router(integridade_router)
+logger.info("SISTEMA_INICIADO")
