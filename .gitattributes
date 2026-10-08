@@ -1,0 +1,2 @@
+# Preservar o conteudo original dos arquivos armazenados
+storage/files/** -text

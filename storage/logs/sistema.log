@@ -356,3 +356,19 @@
 2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
 2026-10-08 18:12:29 INFO Metadados dos documentos carregados.
 2026-10-08 18:12:29 WARNING Documento não encontrado: ID 1017
+2026-10-08 18:23:14 INFO Metadados dos documentos carregados.
+2026-10-08 18:23:14 INFO Documento encontrado: ID 7
+2026-10-08 18:23:14 INFO SHA-256 calculado para o arquivo: 7.csv
+2026-10-08 18:23:14 INFO INTEGRIDADE_OK id=7
+2026-10-08 18:23:20 INFO Metadados dos documentos carregados.
+2026-10-08 18:23:20 INFO Documento encontrado: ID 8
+2026-10-08 18:23:20 INFO SHA-256 calculado para o arquivo: 8.csv
+2026-10-08 18:23:20 INFO INTEGRIDADE_OK id=8
+2026-10-08 18:23:23 INFO Metadados dos documentos carregados.
+2026-10-08 18:23:23 INFO Documento encontrado: ID 9
+2026-10-08 18:23:23 INFO SHA-256 calculado para o arquivo: 9.csv
+2026-10-08 18:23:23 INFO INTEGRIDADE_OK id=9
+2026-10-08 18:23:49 INFO Metadados dos documentos carregados.
+2026-10-08 18:23:49 INFO Documento encontrado: ID 8
+2026-10-08 18:23:49 INFO SHA-256 calculado para o arquivo: 8.csv
+2026-10-08 18:23:49 INFO INTEGRIDADE_OK id=8
