@@ -119,3 +119,28 @@ def remover(documento_id: int) -> bool:
     logger.info("Documento removido: ID %d", documento_id)
 
     return True
+
+# F8: Estatísticas do Cofre Digital
+def calcular_estatisticas() -> dict:
+    documentos = ler_documentos()
+
+    por_extensao = {}
+    por_categoria = {}
+    por_especie = {}
+
+    for documento in documentos:
+        extensao = documento["extensao"]
+        categoria = documento["categoria"]
+        especie = documento["especie"]
+
+        por_extensao[extensao] = por_extensao.get(extensao, 0) + 1
+        por_categoria[categoria] = por_categoria.get(categoria, 0) + 1
+        por_especie[especie] = por_especie.get(especie, 0) + 1
+
+    return {
+        "total_documentos": len(documentos),
+        "tamanho_total_bytes": sum(doc["tamanho"] for doc in documentos),
+        "quantidade_por_extensao": por_extensao,
+        "quantidade_por_categoria": por_categoria,
+        "quantidade_por_especie": por_especie
+    }

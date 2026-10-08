@@ -41,7 +41,7 @@ def upload_documento(
         ) + 1
 
         extensao = arquivo_service.obter_extensao(arquivo.filename)
-        tipo_mime = arquivo_service.obter_tipo_mime(extensao)
+        tipo_mime = arquivo_service.obter_tipo_mime(arquivo.filename)
 
         nome_arquivo = f"{novo_id}{extensao}"
 
@@ -83,13 +83,34 @@ def upload_documento(
             detail=f"Erro ao fazer upload do documento: {erro}"
         )
 
-
-# F2: Listagem de documentos
+# F2 e F7: Listagem e filtragem de documentos
 @router.get("/", response_model=list[Documento])
-def listar_documentos():
+def listar_documentos(
+    categoria: str | None = None,
+    animal: str | None = None,
+    especie: str | None = None
+):
     documentos = documento_service.ler_documentos()
-    return documentos
 
+    if categoria:
+        documentos = [
+            documento for documento in documentos
+            if documento["categoria"].lower() == categoria.lower()
+        ]
+
+    if animal:
+        documentos = [
+            documento for documento in documentos
+            if documento["animal"].lower() == animal.lower()
+        ]
+
+    if especie:
+        documentos = [
+            documento for documento in documentos
+            if documento["especie"].lower() == especie.lower()
+        ]
+
+    return documentos
 
 # F3: Consulta de documentos por ID
 @router.get("/{documento_id}", response_model=Documento)
@@ -176,36 +197,5 @@ def excluir_documento(documento_id: int):
     documento_service.remover(documento_id)
 
     return {"message": "Documento excluído com sucesso"}
-
-
-# F7: Filtragem de documentos
-@router.get("/filtro", response_model=list[Documento])
-def filtrar_documentos(
-    categoria: str | None = None,
-    animal: str | None = None,
-    especie: str | None = None
-):
-    documentos = documento_service.ler_documentos()
-
-    if categoria:
-        documentos = [
-            documento for documento in documentos
-            if documento["categoria"] == categoria
-        ]
-
-    if animal:
-        documentos = [
-            documento for documento in documentos
-            if documento["animal"].lower() == animal.lower()
-        ]
-
-    if especie:
-        documentos = [
-            documento for documento in documentos
-            if documento["especie"] == especie
-        ]
-
-    return documentos
-
 
 # F8: Consulta de documentos por tutor 
