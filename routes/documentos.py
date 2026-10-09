@@ -196,13 +196,7 @@ def baixar_documento(documento_id: int):
 @router.put("/{documento_id}", response_model=Documento)
 def atualizar_documento(
     documento_id: int,
-    categoria: str | None = Form(None),
-    descricao: str | None = Form(None),
-    animal: str | None = Form(None),
-    tutor: str | None = Form(None),
-    especie: str | None = Form(None),
-    data_atendimento: date | None = Form(None),
-    arquivo: UploadFile | None = File(None)
+    dados: DocumentoUpdate 
 ):
     try:
         documento = documento_service.buscar_por_id(documento_id)
@@ -216,52 +210,14 @@ def atualizar_documento(
             detail="Documento não encontrado"
         )
 
-    try:
-        dados = DocumentoUpdate(
-            categoria=categoria,
-            descricao=descricao,
-            animal=animal,
-            tutor=tutor,
-            especie=especie,
-            data_atendimento=data_atendimento
-        )
-    except ValidationError as erro:
-        logger.warning("ATUALIZACAO_DADOS_INVALIDOS id=%d", documento_id)
-        raise HTTPException(status_code=422, detail=str(erro))
-
     dados_atualizados = dados.model_dump(
         mode="json",
-        exclude_none=True
+        exclude_unset=True
     )
 
     documento.update(dados_atualizados)
 
     try:
-        # se um novo arquivo foi enviado, ele substitui o arquivo armazenado
-        if arquivo:
-            nome_antigo = documento["nome_armazenado"]
-
-            extensao = arquivo_service.obter_extensao(arquivo.filename)
-            nome_arquivo = f"{documento_id}{extensao}"
-
-            caminho_arquivo = arquivo_service.salvar_arquivo(
-                arquivo,
-                nome_arquivo
-            )
-
-            # remove o arquivo antigo caso a extensão tenha mudado (ex.: 5.txt -> 5.pdf)
-            if nome_antigo != nome_arquivo:
-                arquivo_service.deletar_arquivo(nome_antigo)
-
-            documento.update(
-                nome_original=arquivo.filename,
-                nome_armazenado=nome_arquivo,
-                extensao=extensao,
-                tipo_mime=arquivo_service.obter_tipo_mime(arquivo.filename),
-                tamanho=caminho_arquivo.stat().st_size,
-                sha256=arquivo_service.calcular_sha256(caminho_arquivo)
-            )
-
         documento_service.atualizar(
             documento_id,
             documento
@@ -269,12 +225,6 @@ def atualizar_documento(
     except Exception:
         logger.exception("ERRO_ATUALIZACAO id=%d", documento_id)
         raise HTTPException(status_code=500, detail="Erro ao salvar a atualização")
-
-    logger.info(
-        "ATUALIZACAO id=%d arquivo_substituido=%s",
-        documento_id,
-        bool(arquivo)
-    )
 
     return documento
 
