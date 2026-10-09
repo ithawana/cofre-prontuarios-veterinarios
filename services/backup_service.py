@@ -16,7 +16,7 @@ def criar_backup() -> Path:
 
     DIRETORIO_BACKUPS.mkdir(parents=True, exist_ok=True)
 
-    data_hora = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    data_hora = datetime.now().strftime("%Y-%m-%d_%H-%M-%S-%f")
 
     nome_backup = f"{PREFIXO_BACKUP}_{data_hora}.zip"
 
@@ -24,7 +24,7 @@ def criar_backup() -> Path:
 
     with zipfile.ZipFile(
         caminho_backup,
-        "w",
+        "x",
         zipfile.ZIP_DEFLATED
     ) as zip_file:
 
