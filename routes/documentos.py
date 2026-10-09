@@ -192,7 +192,7 @@ def baixar_documento(documento_id: int):
     )
 
 
-# F5: Atualização de metadados do documento (e, opcionalmente, do arquivo)
+# F5: Atualização de metadados do documento
 @router.put("/{documento_id}", response_model=Documento)
 def atualizar_documento(
     documento_id: int,
@@ -212,7 +212,7 @@ def atualizar_documento(
 
     dados_atualizados = dados.model_dump(
         mode="json",
-        exclude_unset=True
+        exclude_none=True # ignora campos não enviados ou enviados como null
     )
 
     documento.update(dados_atualizados)
