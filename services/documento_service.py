@@ -153,3 +153,23 @@ def calcular_estatisticas() -> dict:
         "quantidade_por_categoria": por_categoria,
         "quantidade_por_especie": por_especie
     }
+
+
+# F16 (Funcionalidade Específica do Tema): Histórico clínico do animal
+def pegar_data_atendimento(documento: dict) -> str:
+    return documento["data_atendimento"]
+
+def historico_animal(animal: str, tutor: str | None = None) -> list[dict]:
+
+    documentos = [
+        documento for documento in ler_documentos()
+        if documento["animal"].lower() == animal.lower()
+    ]
+
+    if tutor:
+        documentos = [
+            documento for documento in documentos
+            if documento["tutor"].lower() == tutor.lower()
+        ]
+
+    return sorted(documentos, key=pegar_data_atendimento)

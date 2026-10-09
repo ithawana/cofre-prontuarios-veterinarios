@@ -9,7 +9,11 @@ router = APIRouter(tags=["integridade"])
 # F9: Verificação de integridade individual
 @router.get("/documentos/{documento_id}/integridade")
 def verificar_integridade(documento_id: int):
-    documento = documento_service.buscar_por_id(documento_id)
+    try:
+        documento = documento_service.buscar_por_id(documento_id)
+    except Exception:
+        logger.exception("ERRO_INTEGRIDADE id=%d", documento_id)
+        raise HTTPException(status_code=500, detail="Erro ao ler os documentos")
 
     if documento is None:
         logger.warning("INTEGRIDADE_DOCUMENTO_NAO_ENCONTRADO id=%d", documento_id)

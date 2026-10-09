@@ -12,12 +12,20 @@ router = APIRouter(tags=["relatorios"])
 # F8: Estatísticas do Cofre Digital
 @router.get("/documentos/estatisticas")
 def estatisticas_documentos():
-    return documento_service.calcular_estatisticas()
+    try:
+        return documento_service.calcular_estatisticas()
+    except Exception:
+        logger.exception("ERRO_ESTATISTICAS")
+        raise HTTPException(status_code=500, detail="Erro ao calcular as estatísticas")
 
 # F13: Exportação do catálogo para CSV
 @router.get("/exportar/csv")
 def exportar_csv():
-    documentos = documento_service.ler_documentos()
+    try:
+        documentos = documento_service.ler_documentos()
+    except Exception:
+        logger.exception("ERRO_EXPORTACAO_CSV")
+        raise HTTPException(status_code=500, detail="Erro ao ler os documentos")
 
     DIRETORIO_EXPORTS.mkdir(parents=True, exist_ok=True)
     caminho_csv = DIRETORIO_EXPORTS / "catalogo_documentos.csv"

@@ -2,6 +2,8 @@ from fastapi import APIRouter, HTTPException, File, UploadFile, Form, Response
 
 from datetime import datetime, date
 
+from pydantic import ValidationError
+
 from models.documento import Documento, DocumentoCreate, DocumentoUpdate
 from services import documento_service, arquivo_service
 
@@ -14,8 +16,8 @@ router = APIRouter(
 )
 
 
-# F1: Upload e armazenamento de arquivos    
-@router.post("/", response_model=Documento)
+# F1: Upload e armazenamento de arquivos
+@router.post("/", response_model=Documento, status_code=201)
 def upload_documento(
     categoria: str = Form(...),
     descricao: str | None = Form(None),
@@ -34,11 +36,15 @@ def upload_documento(
             especie=especie,
             data_atendimento=data_atendimento
         )
+    except ValidationError as erro:
+        logger.warning("UPLOAD_DADOS_INVALIDOS arquivo=%s", arquivo.filename)
+        raise HTTPException(status_code=422, detail=str(erro))
 
+    try:
         documentos = documento_service.ler_documentos()
 
         novo_id = max(
-            [doc["id"] for doc in documentos], 
+            [doc["id"] for doc in documentos],
             default=0
         ) + 1
 
@@ -61,36 +67,33 @@ def upload_documento(
             extensao=extensao,
             tipo_mime=tipo_mime,
             tamanho=caminho_arquivo.stat().st_size,
-            # .stat() retorna informações sobre o arquivo, como tamanho, data de modificação etc. 
+            # .stat() retorna informações sobre o arquivo, como tamanho, data de modificação etc.
             # .stat().st_size retorna o tamanho do arquivo em bytes.
-            categoria=categoria,
-            descricao=descricao,
+            categoria=dados.categoria,
+            descricao=dados.descricao,
             data_upload=datetime.now(),
             sha256=sha256,
-            animal=animal,
-            tutor=tutor,
-            especie=especie,
-            data_atendimento=data_atendimento
+            animal=dados.animal,
+            tutor=dados.tutor,
+            especie=dados.especie,
+            data_atendimento=dados.data_atendimento
         )
 
         documento_service.adicionar(
             documento.model_dump(mode="json") # transforma em dict
         )
 
-        logger.info(
-            "UPLOAD id=%d arquivo=%s",
-            novo_id,
-            arquivo.filename
-        )
-
-        return documento
-
-    except Exception as erro:
+    except Exception:
         logger.exception("ERRO_UPLOAD arquivo=%s", arquivo.filename)
-        raise HTTPException(
-            status_code=500,
-            detail=f"Erro ao fazer upload do documento: {erro}"
-        )
+        raise HTTPException(status_code=500, detail="Erro ao fazer upload do documento")
+
+    logger.info(
+        "UPLOAD id=%d arquivo=%s",
+        novo_id,
+        arquivo.filename
+    )
+
+    return documento
 
 # F2 e F7: Listagem e filtragem de documentos
 @router.get("/", response_model=list[Documento])
@@ -99,7 +102,11 @@ def listar_documentos(
     animal: str | None = None,
     especie: str | None = None
 ):
-    documentos = documento_service.ler_documentos()
+    try:
+        documentos = documento_service.ler_documentos()
+    except Exception:
+        logger.exception("ERRO_LISTAGEM")
+        raise HTTPException(status_code=500, detail="Erro ao ler os documentos")
 
     if categoria:
         documentos = [
@@ -129,7 +136,11 @@ def listar_documentos(
 # F3: Consulta de documentos por ID
 @router.get("/{documento_id}", response_model=Documento)
 def buscar_documento(documento_id: int):
-    documento = documento_service.buscar_por_id(documento_id)
+    try:
+        documento = documento_service.buscar_por_id(documento_id)
+    except Exception:
+        logger.exception("ERRO_CONSULTA id=%d", documento_id)
+        raise HTTPException(status_code=500, detail="Erro ao ler os documentos")
 
     if not documento:
         raise HTTPException(
@@ -143,7 +154,11 @@ def buscar_documento(documento_id: int):
 # F4: Download de arquivo
 @router.get("/{documento_id}/download")
 def baixar_documento(documento_id: int):
-    documento = documento_service.buscar_por_id(documento_id)
+    try:
+        documento = documento_service.buscar_por_id(documento_id)
+    except Exception:
+        logger.exception("ERRO_DOWNLOAD id=%d", documento_id)
+        raise HTTPException(status_code=500, detail="Erro ao ler os documentos")
 
     if documento is None:
         raise HTTPException(
@@ -155,8 +170,15 @@ def baixar_documento(documento_id: int):
         documento["nome_armazenado"]
     )
 
-    with open(caminho, "rb") as arquivo:
-        conteudo = arquivo.read()
+    try:
+        with open(caminho, "rb") as arquivo:
+            conteudo = arquivo.read()
+    except FileNotFoundError:
+        logger.error("ARQUIVO_NAO_ENCONTRADO id=%d", documento_id)
+        raise HTTPException(status_code=404, detail="Arquivo físico não encontrado")
+    except Exception:
+        logger.exception("ERRO_DOWNLOAD id=%d", documento_id)
+        raise HTTPException(status_code=500, detail="Erro ao ler o arquivo")
 
     logger.info(
         "DOWNLOAD id=%d arquivo=%s",
@@ -170,13 +192,23 @@ def baixar_documento(documento_id: int):
     )
 
 
-# F5: Atualização de metadados do documento
+# F5: Atualização de metadados do documento (e, opcionalmente, do arquivo)
 @router.put("/{documento_id}", response_model=Documento)
 def atualizar_documento(
     documento_id: int,
-    dados: DocumentoUpdate
+    categoria: str | None = Form(None),
+    descricao: str | None = Form(None),
+    animal: str | None = Form(None),
+    tutor: str | None = Form(None),
+    especie: str | None = Form(None),
+    data_atendimento: date | None = Form(None),
+    arquivo: UploadFile | None = File(None)
 ):
-    documento = documento_service.buscar_por_id(documento_id)
+    try:
+        documento = documento_service.buscar_por_id(documento_id)
+    except Exception:
+        logger.exception("ERRO_ATUALIZACAO id=%d", documento_id)
+        raise HTTPException(status_code=500, detail="Erro ao ler os documentos")
 
     if not documento:
         raise HTTPException(
@@ -184,15 +216,64 @@ def atualizar_documento(
             detail="Documento não encontrado"
         )
 
+    try:
+        dados = DocumentoUpdate(
+            categoria=categoria,
+            descricao=descricao,
+            animal=animal,
+            tutor=tutor,
+            especie=especie,
+            data_atendimento=data_atendimento
+        )
+    except ValidationError as erro:
+        logger.warning("ATUALIZACAO_DADOS_INVALIDOS id=%d", documento_id)
+        raise HTTPException(status_code=422, detail=str(erro))
+
     dados_atualizados = dados.model_dump(
-        exclude_unset=True # ignora campos não enviados
+        mode="json",
+        exclude_none=True
     )
 
     documento.update(dados_atualizados)
 
-    documento_service.atualizar(
+    try:
+        # se um novo arquivo foi enviado, ele substitui o arquivo armazenado
+        if arquivo:
+            nome_antigo = documento["nome_armazenado"]
+
+            extensao = arquivo_service.obter_extensao(arquivo.filename)
+            nome_arquivo = f"{documento_id}{extensao}"
+
+            caminho_arquivo = arquivo_service.salvar_arquivo(
+                arquivo,
+                nome_arquivo
+            )
+
+            # remove o arquivo antigo caso a extensão tenha mudado (ex.: 5.txt -> 5.pdf)
+            if nome_antigo != nome_arquivo:
+                arquivo_service.deletar_arquivo(nome_antigo)
+
+            documento.update(
+                nome_original=arquivo.filename,
+                nome_armazenado=nome_arquivo,
+                extensao=extensao,
+                tipo_mime=arquivo_service.obter_tipo_mime(arquivo.filename),
+                tamanho=caminho_arquivo.stat().st_size,
+                sha256=arquivo_service.calcular_sha256(caminho_arquivo)
+            )
+
+        documento_service.atualizar(
+            documento_id,
+            documento
+        )
+    except Exception:
+        logger.exception("ERRO_ATUALIZACAO id=%d", documento_id)
+        raise HTTPException(status_code=500, detail="Erro ao salvar a atualização")
+
+    logger.info(
+        "ATUALIZACAO id=%d arquivo_substituido=%s",
         documento_id,
-        documento
+        bool(arquivo)
     )
 
     return documento
@@ -201,8 +282,11 @@ def atualizar_documento(
 # F6: Exclusão de documento
 @router.delete("/{documento_id}")
 def excluir_documento(documento_id: int):
-
-    documento = documento_service.buscar_por_id(documento_id)
+    try:
+        documento = documento_service.buscar_por_id(documento_id)
+    except Exception:
+        logger.exception("ERRO_EXCLUSAO id=%d", documento_id)
+        raise HTTPException(status_code=500, detail="Erro ao ler os documentos")
 
     if not documento:
         raise HTTPException(
@@ -210,12 +294,38 @@ def excluir_documento(documento_id: int):
             detail="Documento não encontrado"
         )
 
-    arquivo_service.deletar_arquivo(
-        documento["nome_armazenado"]
-    )
+    try:
+        arquivo_service.deletar_arquivo(
+            documento["nome_armazenado"]
+        )
 
-    documento_service.remover(documento_id)
+        documento_service.remover(documento_id)
+    except Exception:
+        logger.exception("ERRO_EXCLUSAO id=%d", documento_id)
+        raise HTTPException(status_code=500, detail="Erro ao excluir o documento")
+
+    logger.info("EXCLUSAO id=%d", documento_id)
 
     return {"message": "Documento excluído com sucesso"}
 
-# F8: Consulta de documentos por tutor 
+
+# F16 (Funcionalidade Específica do Tema): Histórico clínico do animal
+@router.get("/{animal}/historico")
+def historico_animal(animal: str, tutor: str | None = None):
+    try:
+        documentos = documento_service.historico_animal(animal, tutor)
+    except Exception:
+        logger.exception("ERRO_HISTORICO animal=%s", animal)
+        raise HTTPException(status_code=500, detail="Erro ao ler os documentos")
+
+    if not documentos:
+        logger.error("HISTORICO_NAO_ENCONTRADO animal=%s", animal)
+        raise HTTPException(status_code=404, detail="Nenhum documento encontrado para este animal")
+
+    logger.info("HISTORICO animal=%s total=%d", animal, len(documentos))
+
+    return {
+        "animal": animal,
+        "total_documentos": len(documentos),
+        "documentos": documentos
+    }
