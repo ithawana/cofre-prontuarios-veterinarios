@@ -6,6 +6,8 @@ from routes.relatorios import router as relatorios_router
 
 from routes.integridade import router as integridade_router
 
+from routes.backup import router as backup_router
+
 from logging_config import logger
 
 
@@ -18,4 +20,5 @@ app = FastAPI(
 app.include_router(relatorios_router)
 app.include_router(documentos_router)
 app.include_router(integridade_router)
+app.include_router(backup_router)
 logger.info("SISTEMA_INICIADO")
