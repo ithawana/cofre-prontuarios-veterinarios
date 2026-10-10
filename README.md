@@ -2,7 +2,7 @@
 
 Aplicação desenvolvida em Python com FastAPI para armazenamento e gerenciamento de prontuários veterinários.
 
-Trabalho Prático 1 da disciplina **QXD0099 - Desenvolvimento de Software para Persistência** (UFC - Campus Quixadá).
+Trabalho Prático da disciplina **Desenvolvimento de Software para Persistência**.
 
 ## Integrantes e o que cada um fez
 
@@ -32,8 +32,9 @@ Cada documento enviado é guardado no sistema de arquivos e recebe um identifica
 ## Bibliotecas utilizadas
 
 | Biblioteca | Uso no projeto |
+|---|---|
 | `fastapi` | Criação da API e das rotas |
-| `uvicorn[standard]` | Servidor que executa a aplicação |
+| `uvicorn` | Servidor que executa a aplicação |
 | `pydantic` | Modelos e validação dos metadados (`Documento`, `DocumentoCreate`, `DocumentoUpdate`) |
 | `pyyaml` | Leitura do arquivo de configuração `config.yaml` |
 | `python-multipart` | Recebimento de arquivos via formulário (`multipart/form-data`) no upload |
@@ -87,9 +88,7 @@ Na pasta do projeto (onde está o `main.py`), inicie o servidor:
 uvicorn main:app --reload
 ```
 
-A API ficará disponível em `http://127.0.0.1:8000`. A documentação interativa (Swagger), em que é possível testar todos os endpoints, fica em:
-
-- `http://127.0.0.1:8000/docs`
+A API ficará disponível em `http://127.0.0.1:8000`. A documentação interativa (Swagger), em que é possível testar todos os endpoints, fica em: `http://127.0.0.1:8000/docs`
 
 ### Dados de demonstração
 
